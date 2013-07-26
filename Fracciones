@@ -29,7 +29,7 @@ public class Fraccion {
     z.den=x.den*y.den;
     return z;
 }
-public  Fraccion resta(Fraccion x, Fraccion y){
+public   Fraccion resta(Fraccion x, Fraccion y){
     Fraccion z=new Fraccion ();
     z.num=(x.num*y.den)-(x.den*y.num);
     z.den=x.den*y.den;
@@ -94,16 +94,16 @@ public  Fraccion resta(Fraccion x, Fraccion y){
         p.den=p.den+1;
         return p;
      }
-     public boolean compara (Fraccion a, Fraccion b)
+     public boolean compara (Fraccion b)
      {
-         if (a.num*b.den>a.den*b.num)
+         if (this.num*b.den>this.den*b.num)
              return true;
          else 
              return false;
      }
      
      
-             public boolean escero(){
+      public boolean escero(){
                  if (this.num==0)
                      return true;
                      else
