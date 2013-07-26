@@ -24,15 +24,20 @@ public class Main {
        i=2;
        msg=" ";
        do {
-            frac_x=new Fraccion (1,i);
-            if (nftemp.compara(nftemp, frac_x))
+          
+           frac_x=new Fraccion (1,i);
+            if ((nftemp.compara(frac_x)))
             {
-              nftemp=nftemp.resta(nftemp,frac_x) ;
-              msg=msg+frac_x.num+"/"+frac_x.den+"+ ";
-              javax.swing.JOptionPane.showMessageDialog(null,msg);
+              nftemp=nftemp.resta(nftemp,frac_x);
               nftemp.reduce(nftemp);
+              System.out.println(nftemp.num+"/"+nftemp.den);
+              msg=msg+frac_x.num+"/"+frac_x.den+" + ";
+              javax.swing.JOptionPane.showMessageDialog(null,msg);
+              i++;
               }
-            i++;}
+           
+           
+            }
             while(!(nftemp.escero()));
             
        
@@ -41,12 +46,3 @@ public class Main {
             
             
        
-       
-        
-      
-        
-   
-    
-        
-
-
