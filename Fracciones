@@ -11,6 +11,18 @@ public class Fraccion {
     num=1;
     den=1;   
 }
+    public Fraccion (int a, int b) {
+        num=a; 
+        if(b!=0)
+        {
+            den=b;
+        }
+        else
+        {
+            System.out.println("El denominador debe ser distinto a cero y le asig. valor 1");
+            den=1;
+        }
+    }//fin del constructor
     public static Fraccion suma(Fraccion x, Fraccion y) {
     Fraccion z=new Fraccion ();
     z.num=(x.num*y.den)+(x.den*y.num);
@@ -75,8 +87,13 @@ public  Fraccion resta(Fraccion x, Fraccion y){
                 return 3;
             }
         }
-     
-   
+     public  Fraccion busca_fraccion(Fraccion p)
+             
+     {
+        p.num=1;
+        p.den=p.den+1;
+        return p;
+     }
      public boolean compara (Fraccion a, Fraccion b)
      {
          if (a.num*b.den>a.den*b.num)
