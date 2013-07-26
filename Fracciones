@@ -1,0 +1,98 @@
+package numerosfracciones;
+
+/**
+ *
+ * @author Alex Gallardo
+ */
+public class Fraccion {
+    int num, den;
+    
+    public Fraccion () {
+    num=1;
+    den=1;   
+}
+    public static Fraccion suma(Fraccion x, Fraccion y) {
+    Fraccion z=new Fraccion ();
+    z.num=(x.num*y.den)+(x.den*y.num);
+    z.den=x.den*y.den;
+    return z;
+}
+public  Fraccion resta(Fraccion x, Fraccion y){
+    Fraccion z=new Fraccion ();
+    z.num=(x.num*y.den)-(x.den*y.num);
+    z.den=x.den*y.den;
+    return z;
+}
+    public Fraccion reduce (Fraccion x) {
+       Fraccion b=new Fraccion();
+       int n, i;
+       if(x.num<x.den)
+       {
+           n=x.num;
+       }
+       else
+       {
+           n=x.den;
+       }
+       b=x;
+       i=2;
+       while(i<=n)
+       {
+           if((b.num%i==0)&&(b.den%i==0))
+           {
+               b.num=b.num/i;
+               b.den=b.den/i;
+               i=2;
+           }
+           else
+           {
+               i++;
+           }
+       }//fin del mientras
+       return b;  
+    }//fin del reduce
+    
+    public void  mostrar(){
+        javax.swing.JOptionPane.showMessageDialog (null,num+"/"+den);
+    }
+     int iguales (Fraccion a, Fraccion b) {
+        
+        Fraccion c;
+        Fraccion d;
+        c=a.reduce(a);
+        d=b.reduce(b);
+        if ((c.num==d.num)&&(c.den==d.den))
+        {
+            
+            return 1;
+        }
+        if ((c.num<d.num)&&(c.den<d.num))
+        {
+            return 2;
+        }
+           else
+            {
+                return 3;
+            }
+        }
+     
+   
+     public boolean compara (Fraccion a, Fraccion b)
+     {
+         if (a.num*b.den>a.den*b.num)
+             return true;
+         else 
+             return false;
+     }
+     
+     
+             public boolean escero(){
+                 if (this.num==0)
+                     return true;
+                     else
+                         return false;
+             }
+             
+        
+      
+      }//fin de la clase Fraccion
